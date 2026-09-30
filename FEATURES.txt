@@ -1,0 +1,27 @@
+FEATURES.txt
+PROJECT FEATURES
+
+1. User Registration
+   - Users can create an account.
+   - Username, email, and password are required.
+
+2. User Login
+   - Registered users can log in securely.
+   - Invalid login details display an error message.
+
+3. Dashboard
+   - Users can view their account information.
+   - Main features are accessible from the dashboard.
+
+4. Data Management
+   - Users can add, edit, view, and delete records.
+
+5. Search
+   - Users can search records using keywords.
+
+6. Logout
+   - Users can securely log out of the system.
+
+7. Error Handling
+   - The application displays appropriate messages for invalid input
+     and system errors.
