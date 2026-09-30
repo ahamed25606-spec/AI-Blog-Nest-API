@@ -1,0 +1,78 @@
+1. Project Folder Structure
+MyProject/
+│
+├── server.js
+├── routes/
+│   └── chatbot.js
+├── data/
+│   └── message.txt
+└── package.json
+2. Create Server (server.js)
+const express = require('express');
+const app = express();
+
+const chatbotRoutes = require('./routes/chatbot');
+
+app.use(express.json());
+
+app.use('/api/chatbot', chatbotRoutes);
+
+app.listen(3000, () => {
+    console.log("Server running on port 3000");
+});
+3. Create Route (routes/chatbot.js)
+const express = require('express');
+const fs = require('fs');
+
+const router = express.Router();
+
+router.get('/', (req, res) => {
+    fs.readFile('data/message.txt', 'utf8', (err, data) => {
+        if (err) {
+            return res.status(500).send("File not found");
+        }
+
+        res.send(data);
+    });
+});
+
+module.exports = router;
+4. Create Text File (data/message.txt)
+Welcome to AI Chatbot!
+How can I help you today?
+5. Install and Run
+
+Open VS Code terminal:
+
+npm init -y
+npm install express
+node server.js
+
+Open browser:
+
+http://localhost:3000/api/chatbot
+
+Output:
+
+Welcome to AI Chatbot!
+How can I help you today?
+
+This connects your route to the Express server and reads the text file.
+
+Are you using:
+
+Select your coding setup
+
+Node.js + Express
+Python + Flask
+Python + Django
+HTML + CSS + JavaScript
+PHP + MySQL
+
+What do you want to build?
+
+Connect frontend to backend
+Connect routes to server
+Read data from a text file
+Build an AI-powered chatbot
+Show complete code
